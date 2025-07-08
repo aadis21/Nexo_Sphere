@@ -300,7 +300,7 @@ const testimonials = [
               Get a Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <a href="#team">
+            <a href="#portfolio">
   <Button
     size="lg"
     variant="outline"
