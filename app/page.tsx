@@ -1,0 +1,527 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  ChevronDown,
+  Globe,
+  Smartphone,
+  Palette,
+  Share2,
+  Plus,
+  Star,
+  ArrowRight,
+  Mail,
+  MessageCircle,
+  Instagram,
+  ExternalLink,
+} from "lucide-react"
+
+export default function NeoxSphere() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const services = [
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Website Development",
+      description: "Custom websites built with modern technologies for optimal performance and user experience.",
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "UI/UX for Websites",
+      description: "Intuitive and engaging web interfaces that convert visitors into customers.",
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "App UI/UX Design",
+      description: "Mobile-first design approach for seamless app experiences across all devices.",
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Branding Solutions",
+      description: "Complete brand identity packages that make your business stand out.",
+    },
+    {
+      icon: <Share2 className="w-8 h-8" />,
+      title: "Social Media Packages",
+      description: "Engaging content strategies and designs for all social media platforms.",
+    },
+    {
+      icon: <Plus className="w-8 h-8" />,
+      title: "Add-on Services",
+      description: "Pitch decks, logo animations, and other creative services to complete your brand.",
+    },
+  ]
+
+  const portfolio = [
+    {
+      title: "CollabSphere",
+      description: "Modern collaboration platform with real-time features",
+      tags: ["Web App", "UI/UX", "Branding"],
+      image: "/placeholder.svg?height=300&width=400",
+    },
+    {
+      title: "Alketb Portfolio",
+      description: "Creative portfolio website with stunning animations",
+      tags: ["Portfolio", "Web Design", "Animation"],
+      image: "/placeholder.svg?height=300&width=400",
+    },
+    {
+      title: "Ashneet Grievance Portal",
+      description: "Government portal for citizen grievance management",
+      tags: ["Web App", "Government", "UX"],
+      image: "/placeholder.svg?height=300&width=400",
+    },
+  ]
+
+  const testimonials = [
+    {
+      quote: "NeoxSphere delivered beyond our expectations. The design is stunning and the functionality is flawless.",
+      name: "Sarah Johnson",
+      role: "CEO, TechStart",
+      avatar: "/placeholder.svg?height=60&width=60",
+    },
+    {
+      quote: "Professional, fast, and creative. They understood our vision perfectly and brought it to life.",
+      name: "Michael Chen",
+      role: "Founder, InnovateLab",
+      avatar: "/placeholder.svg?height=60&width=60",
+    },
+    {
+      quote: "The team at NeoxSphere is incredible. They delivered our project on time and exceeded all requirements.",
+      name: "Emily Rodriguez",
+      role: "Marketing Director, GrowthCo",
+      avatar: "/placeholder.svg?height=60&width=60",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-blue-500/20">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              NeoxSphere
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#services" className="hover:text-blue-400 transition-colors">
+                Services
+              </a>
+              <a href="#portfolio" className="hover:text-blue-400 transition-colors">
+                Portfolio
+              </a>
+              <a href="#aboutus" className="hover:text-blue-400 transition-colors">
+                About Us
+              </a>
+
+              <a href="#contact" className="hover:text-blue-400 transition-colors">
+                Contact
+              </a>
+              
+            </div>
+            <Button className="bg-blue-600 hover:bg-blue-700 border border-blue-500 glow-blue">Get Quote</Button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-cyan-900/20"></div>
+        <div className="absolute inset-0">
+          <div className="stars"></div>
+        </div>
+
+        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+            <span className="block">Designs That</span>
+            <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
+              Speak.
+            </span>
+            <span className="block">Delivery That</span>
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">
+              Stuns.
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Built for brands that move fast, think bold, and demand the best.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 border border-blue-500 glow-blue px-8 py-4 text-lg"
+            >
+              Get a Quote
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-blue-500 text-blue-400 hover:bg-blue-500/10 px-8 py-4 text-lg"
+            >
+              View Portfolio
+            </Button>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-blue-400" />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section  id="aboutus" className="py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              About{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                NeoxSphere
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We're a futuristic creative agency that transforms bold visions into digital reality. Our team combines
+              cutting-edge design with innovative technology to deliver experiences that captivate and convert.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: <Globe className="w-8 h-8" />, title: "Global Quality", desc: "World-class standards" },
+              { icon: <ArrowRight className="w-8 h-8" />, title: "Fast Delivery", desc: "Lightning-speed execution" },
+              { icon: <Star className="w-8 h-8" />, title: "Startup-Ready", desc: "Built for growth" },
+              { icon: <Palette className="w-8 h-8" />, title: "Future-Centric", desc: "Tomorrow's design today" },
+            ].map((feature, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900/50 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:glow-card"
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="text-blue-400 mb-4 flex justify-center">{feature.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 text-sm">{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 px-6 bg-gray-900/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Services</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Comprehensive digital solutions tailored for modern businesses
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="bg-black/50 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:glow-card group"
+              >
+                <CardContent className="p-8">
+                  <div className="text-blue-400 mb-6 group-hover:text-cyan-400 transition-colors">{service.icon}</div>
+                  <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+                  <Button variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Featured{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Work</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Showcasing our latest projects and creative solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolio.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900/50 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:glow-card group overflow-hidden"
+              >
+                <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-cyan-900/50 relative overflow-hidden">
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300"></div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <Button variant="ghost" className="text-blue-400 hover:text-cyan-400 p-0">
+                    View Project <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-6 bg-gray-900/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Client{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Stories</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className="bg-black/50 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:glow-card"
+              >
+                <CardContent className="p-8">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-300 mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
+                  <div className="flex items-center">
+                    <img
+                      src={testimonial.avatar || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+    
+{/* teamTestimonials Section */}
+<section className="py-24 px-6 bg-gray-900/30">
+  <div className="container mx-auto max-w-6xl">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        Meet a{" "}
+        <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Team</span>
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <Card
+          key={index}
+          className="bg-black/50 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:glow-card"
+        >
+          <CardContent className="p-8">
+            <p className="text-gray-300 mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
+            <div className="flex items-center mb-6">
+              <img
+                src={testimonial.avatar || "/placeholder.svg"}
+                alt={testimonial.name}
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 className="font-semibold">{testimonial.name}</h4>
+                <p className="text-gray-400 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <a href="#portfolio">
+              <Button variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10">
+                View Projects
+              </Button>
+            </a>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+      {/* Pricing Teaser */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8">
+            Starting at{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">₹3,000</span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-12">Speed delivery available</p>
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 border border-blue-500 glow-blue px-12 py-4 text-lg"
+          >
+            Request Pricing Sheet
+          </Button>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 px-6 bg-gray-900/30">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Let's{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Connect</span>
+            </h2>
+            <p className="text-xl text-gray-300">Ready to bring your vision to life?</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <Card className="bg-black/50 border-blue-500/20">
+                <CardContent className="p-8">
+                  <form className="space-y-6">
+                    <div>
+                      <Input
+                        placeholder="Your Name"
+                        className="bg-gray-900/50 border-blue-500/30 focus:border-blue-500 text-white"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        type="email"
+                        placeholder="Your Email"
+                        className="bg-gray-900/50 border-blue-500/30 focus:border-blue-500 text-white"
+                      />
+                    </div>
+                    <div>
+                      <Textarea
+                        placeholder="Tell us about your project..."
+                        rows={5}
+                        className="bg-gray-900/50 border-blue-500/30 focus:border-blue-500 text-white resize-none"
+                      />
+                    </div>
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700 border border-blue-500 glow-blue">
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <Mail className="w-6 h-6 text-blue-400" />
+                    <span className="text-gray-300">neoxsphere.agency@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <MessageCircle className="w-6 h-6 text-blue-400" />
+                    <span className="text-gray-300">WhatsApp Available</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Instagram className="w-6 h-6 text-blue-400" />
+                    <span className="text-gray-300">@neoxsphere</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-lg border border-blue-500/20">
+                <h4 className="text-xl font-semibold mb-4">Why Choose NeoxSphere?</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>✓ 48-hour turnaround available</li>
+                  <li>✓ Unlimited revisions</li>
+                  <li>✓ Future-ready designs</li>
+                  <li>✓ Global quality standards</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 border-t border-blue-500/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+                NeoxSphere
+              </div>
+              <p className="text-gray-400">Where Bold Brands Are Born.</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <a href="#services" className="block text-gray-400 hover:text-blue-400 transition-colors">
+                  Services
+                </a>
+                <a href="#portfolio" className="block text-gray-400 hover:text-blue-400 transition-colors">
+                  Portfolio
+                </a>
+                <a href="#contact" className="block text-gray-400 hover:text-blue-400 transition-colors">
+                  Contact
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Follow Us</h4>
+              <div className="flex space-x-4">
+                <MessageCircle className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors cursor-pointer" />
+                <Instagram className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors cursor-pointer" />
+                <Mail className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors cursor-pointer" />
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-gray-400 pt-8 border-t border-blue-500/20">
+            <p>&copy; 2024 NeoxSphere. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
