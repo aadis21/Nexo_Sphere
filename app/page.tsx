@@ -62,47 +62,62 @@ export default function NeoxSphere() {
     },
   ]
 
-  const portfolio = [
-    {
-      title: "CollabSphere",
-      description: "Modern collaboration platform with real-time features",
-      tags: ["Web App", "UI/UX", "Branding"],
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Alketb Portfolio",
-      description: "Creative portfolio website with stunning animations",
-      tags: ["Portfolio", "Web Design", "Animation"],
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: "Ashneet Grievance Portal",
-      description: "Government portal for citizen grievance management",
-      tags: ["Web App", "Government", "UX"],
-      image: "/placeholder.svg?height=300&width=400",
-    },
-  ]
+ const portfolio = [
+  {
+    title: "AlumniConnect",
+    description:
+      "A robust web platform built with Django to connect students and alumni, featuring secure role-based dashboards, smart search, and interactive community tools.",
+    tags: ["Django", "Web App", "PostgreSQL"],
+    image: "/placeholder.svg?height=300&width=400",
+  },
+  {
+    title: "Patient Management System",
+    description:
+      "A scalable healthcare backend using Spring Boot, with 60+ REST APIs, Kafka integration, and role-based access for secure management of patients, doctors, and appointments.",
+    tags: ["Spring Boot", "Kafka", "REST API", "MySQL"],
+    image: "/placeholder.svg?height=300&width=400",
+  },
+  {
+    title: "GamePredictor Pro – Mines & Color",
+    description:
+      "Frontend-based prediction tool for Mines and Color Trading games on betting platforms, using custom JavaScript logic for trend analysis and real-time suggestions.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: "/placeholder.svg?height=300&width=400",
+  },
+];
 
-  const testimonials = [
-    {
-      quote: "NeoxSphere delivered beyond our expectations. The design is stunning and the functionality is flawless.",
-      name: "Sarah Johnson",
-      role: "CEO, TechStart",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "Professional, fast, and creative. They understood our vision perfectly and brought it to life.",
-      name: "Michael Chen",
-      role: "Founder, InnovateLab",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-    {
-      quote: "The team at NeoxSphere is incredible. They delivered our project on time and exceeded all requirements.",
-      name: "Emily Rodriguez",
-      role: "Marketing Director, GrowthCo",
-      avatar: "/placeholder.svg?height=60&width=60",
-    },
-  ]
+
+const testimonials = [
+  {
+    quote:
+      "Experienced XR Developer with a strong background in AR/VR solutions, Unity development, and immersive training simulators. Worked with the Indian Air Force and won multiple national hackathons. Received ₹2.25L funding for ChemLit XR and delivered AR/VR workshops across top institutions.",
+    name: "Akarsh Anand Sinha",
+    role: "XR Developer",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    quote:
+      "I'm a UI/UX Designer currently in the final semester of my MCA at Thapar University. At present, I'm interning at Venture Lab, the university’s startup incubator, where I collaborate with early-stage startups to design user-friendly digital products. I specialize in Figma, wireframing, prototyping, and visual storytelling—focused on simplifying complex workflows and enhancing user experience through intuitive design.",
+    name: "Kanishk Dadwal",
+    role: "UI/UX Designer",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    quote:
+      "I'm a Software Developer specializing in Java (Spring Boot) and Python (Django). I build scalable backend systems, robust REST APIs, and full-stack applications with real-world deployment experience on AWS. My focus is on clean architecture, modular code, and performance-driven solutions tailored for real-world impact.",
+    name: "Rahul",
+    role: "Full Stack Developer",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    quote:
+      "I'm a Frontend and Python Developer with a passion for building clean, responsive, and intuitive web applications. I specialize in modern frontend frameworks like React and Next.js, and I pair them with powerful backends using Django. With a strong eye for UI/UX and experience in RESTful API integration, I deliver full-stack solutions that are both user-centric and performance-driven. I enjoy turning complex problems into elegant, functional designs that work seamlessly across platforms.",
+    name: "Ashneet Kaur",
+    role: "Frontend Developer",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+]
+
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -165,13 +180,15 @@ export default function NeoxSphere() {
               Get a Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-500 text-blue-400 hover:bg-blue-500/10 px-8 py-4 text-lg"
-            >
-              View Portfolio
-            </Button>
+            <a href="#team">
+  <Button
+    size="lg"
+    variant="outline"
+    className="border-blue-500 text-blue-400 hover:bg-blue-500/10 px-8 py-4 text-lg"
+  >
+    View Portfolio
+  </Button>
+</a>
           </div>
         </div>
 
@@ -288,9 +305,9 @@ export default function NeoxSphere() {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-blue-400 hover:text-cyan-400 p-0">
+                  {/* <Button variant="ghost" className="text-blue-400 hover:text-cyan-400 p-0">
                     View Project <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -299,7 +316,7 @@ export default function NeoxSphere() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 px-6 bg-gray-900/30">
+      {/* <section className="py-24 px-6 bg-gray-900/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -337,16 +354,16 @@ export default function NeoxSphere() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       
     
 {/* teamTestimonials Section */}
-<section className="py-24 px-6 bg-gray-900/30">
+<section id="team" className="py-24 px-6 bg-gray-900/30">
   <div className="container mx-auto max-w-6xl">
     <div className="text-center mb-16">
       <h2 className="text-4xl md:text-5xl font-bold mb-6">
-        Meet a{" "}
+        Meet Our{" "}
         <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Team</span>
       </h2>
     </div>
@@ -381,6 +398,7 @@ export default function NeoxSphere() {
     </div>
   </div>
 </section>
+
 
 
 
