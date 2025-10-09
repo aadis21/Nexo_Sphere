@@ -26,7 +26,7 @@ import {
   ExternalLink,
 } from "lucide-react"
 
-export default function NeoxSphere() {
+export default function paypll() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -246,7 +246,7 @@ const testimonials = [
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              NeoxSphere
+              paypll
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="hover:text-blue-400 transition-colors">
@@ -325,11 +325,11 @@ const testimonials = [
       <h2 className="text-4xl md:text-5xl font-bold mb-6">
         About {" "}
         <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-          NeoxSphere
+          paypll
         </span>
       </h2>
       <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        NeoxSphere is a futuristic creative agency that transforms bold visions into digital reality. Our team blends
+        paypll is a futuristic creative agency that transforms bold visions into digital reality. Our team blends
         cutting-edge design, innovative technologies, and strategic thinking to craft unforgettable digital
         experiences. With a passion for innovation and a commitment to excellence, we empower brands to connect, inspire,
         and grow in today’s dynamic digital landscape.
@@ -640,7 +640,7 @@ const testimonials = [
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <Mail className="w-6 h-6 text-blue-400" />
-                    <span className="text-gray-300">neoxsphere.agency@gmail.com</span>
+                    <span className="text-gray-300">paypll.agency@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <MessageCircle className="w-6 h-6 text-blue-400" />
@@ -648,13 +648,13 @@ const testimonials = [
                   </div>
                   <div className="flex items-center space-x-4">
                     <Instagram className="w-6 h-6 text-blue-400" />
-                    <span className="text-gray-300">@neoxsphere</span>
+                    <span className="text-gray-300">@paypll</span>
                   </div>
                 </div>
               </div>
 
               <div className="p-8 bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-lg border border-blue-500/20">
-                <h4 className="text-xl font-semibold mb-4">Why Choose NeoxSphere?</h4>
+                <h4 className="text-xl font-semibold mb-4">Why Choose paypll?</h4>
                 <ul className="space-y-2 text-gray-300">
                   <li>✓ 48-hour turnaround available</li>
                   <li>✓ Unlimited revisions</li>
@@ -673,7 +673,7 @@ const testimonials = [
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-                NeoxSphere
+                paypll
               </div>
               <p className="text-gray-400">Where Bold Brands Are Born.</p>
             </div>
@@ -704,7 +704,7 @@ const testimonials = [
           </div>
 
           <div className="text-center text-gray-400 pt-8 border-t border-blue-500/20">
-            <p>&copy; 2024 NeoxSphere. All rights reserved.</p>
+            <p>&copy; 2024 paypll. All rights reserved.</p>
           </div>
         </div>
       </footer>
